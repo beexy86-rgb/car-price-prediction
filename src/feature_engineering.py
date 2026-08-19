@@ -29,3 +29,39 @@ def _is_high_mileage(df: pd.DataFrame) -> pd.DataFrame:
     if 'mileage_kilometers' in df.columns:
             df['is_high_mileage'] = (df['mileage_kilometers'] > 150000).astype(int)
     return df
+
+#POVEZIVANJE U PIPELINE
+def build_features(df: pd.DataFrame) -> pd.DataFrame:
+ 
+    df_features = (
+        df
+        .pipe(_calculate_car_age)
+        .pipe(_calculate_mileage_per_year)
+        .pipe(_is_newer_car)
+        .pipe(_is_high_mileage)
+        .reset_index(drop=True)
+    )
+ 
+    return df_features
+
+CLEANED_DATA_PATH = "data/car_data_cleaned.csv"
+FEATURES_DATA_PATH = "data/car_data_cleaned_with_features.csv"
+
+def main() -> None:
+    """Load cleaned data, build features, and save the feature-engineered dataset."""
+    print("Loading cleaned dataset...")
+ 
+    df_cleaned = pd.read_csv(CLEANED_DATA_PATH)
+ 
+    print("Building features...")
+ 
+    df_features = build_features(df_cleaned)
+ 
+    print("Saving feature-engineered dataset...")
+ 
+    df_features.to_csv(FEATURES_DATA_PATH, index=False)
+ 
+    print(f"Feature-engineered dataset saved to: {FEATURES_DATA_PATH}")
+    
+    if __name__ == "__main__":
+        main()
