@@ -25,7 +25,6 @@ print("Saving feature-engineered dataset...")
 df_featured.to_csv(FEATURES_DATA_PATH, index=False)
 print(f"Feature-engineered dataset saved to: {FEATURES_DATA_PATH}")
 
-#PRAVLJENJE PRVIH PREDIKCIJA - videti da li to raditi u ovom fajlu ili ne
 
 
 
