@@ -15,7 +15,7 @@ categorical_columns = ['make', 'model', 'condition', 'fuel_type', 'color', 'tran
 def _solve_suspicious_price(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     if "priceUSD" in df.columns:
-        df.loc[df['priceUSD'] < 1000, 'priceUSD'] = 1000
+        df.loc[df['priceUSD'] < 200, 'priceUSD'] = 200
     return df
 
 #Otklanjanje ekstremno malih kilometraža u koloni mileage(kilometre)
