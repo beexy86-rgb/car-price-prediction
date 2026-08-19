@@ -1,7 +1,7 @@
 import re
 import pandas as pd
 
-RAW_DATA_PATH = "data/car_data_raw.csv"
+RAW_DATA_PATH = "data/cars.csv"
 CLEANED_DATA_PATH = "data/car_data_cleaned.csv"
 
 MISSING_LIKE_VALUES = {"", " ", "nan", "NaN", "NAN", "null", "Null", "NULL", "none", "None", "NONE",}

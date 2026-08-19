@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder 
 
 #Definisanje ciljne promenljive
-TARGET_COLUMN = "price_usd"
+TARGET_COLUMN = "priceusd"
 
 #Definisanje numeričkih karakteristika
 NUMERIC_FEATURES = ['year', 'mileage_kilometers', 'volume_cm3']

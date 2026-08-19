@@ -1,3 +1,5 @@
+#Treniranje modela - LINEARNA REGRESIJA
+
 import joblib
 import pandas as pd
  
