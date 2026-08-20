@@ -14,9 +14,11 @@ from data_preprocessing import (
 
 #Definisanje putanje i učitavanje podataka sa dodatnim karakteristikama
 DATA_PATH = "data/car_data_cleaned_with_features.csv"
+print("Loading data...")
 df = pd.read_csv(DATA_PATH)
 
 #Razdvajanje podataka i podela na trening i test skup
+print("Splitting data...")
 X, y = split_features_and_target(df)
 
 X_train, X_test, y_train, y_test = train_test_split(
@@ -35,6 +37,7 @@ models = {
 }
 
 #Treniranje i evaluacija modela
+print("Training models...")
 results = []
 for model_name, regressor in models.items():
  

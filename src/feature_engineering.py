@@ -1,6 +1,5 @@
 #car_age, mileage_per_year ili engine_volume_liters
 import pandas as pd
-import datetime
 
 #Izračunavanje starosti automobila u godinama
 def _calculate_car_age(df: pd.DataFrame) -> pd.DataFrame: 
