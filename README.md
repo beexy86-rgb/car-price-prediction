@@ -20,9 +20,49 @@ car-price-prediction/
 ├── README.md
 └── requirements.txt
 
+# ulazni podaci 
+
+Ulazni podaci se nalaze u folderu data, u fajlu cars.csv. Podaci su dalje obrađeni kroz čišćenje i dodavanje novih karakteristika, a ti novi fajlovi su takođe snimljeni u folder data.
+
+# pokretanje koda
+
+U projektu postoji više fajlova - neki od njih korisnik koristi direktno, odnosno pokreće ih, a neki fajlovi služe kao ispomoć fajlovima koje korisnik pokreće.
+Da bi se kod pokrenuo počev ispočetka, od sirovih podataka, potrebno je prvo pokrenuti skriptu: 
+
+main.py, 
+
+koja se nalazi u korenom folderu. Nakon izvršavanja koda dobiće se fajl sa očišćenim podacima i fajl sa dodatnim karakteristikama, oba snimljena u folder data.
+
+Zatim se pokreće skripta:
+
+model_training.py, 
+
+koja se nalazi u folderu src. Na ovaj način se trenira model linearne regresije i čuva u folderu models.
+
+Pokretanjem skripte:
+
+make_prediction.py
+
+u korenom folderu dobijaju se predikcije modela na osnovu slučajno odabranih redova iz test skupa podataka. Prikazuju se stvarne i prognozirane cene automobila.
+
+Pokretanjem skripte:
+
+model_evaluation.py
+
+u folderu src dobijaju se metrike za vrednovanje treniranog modela linearne regresije.
+
+Pokretanjem skripte:
+
+model_comparison.py 
+
+u folderu src radi se poređenje različitih regresionih modela: Linear Regression, Decision Tree, Random Forest i Gradient Boosting. Korišćene metrike su: mae, mse, rmse i R2. Na osnovu izlaznih rezultata bira se najbolji model.
+
+Linearna regesija se pokazala kao najlošiji model. Ostala tri modela imaju slične metrike, ali je Random Forest najbolji.
+
+
 # odabir najboljeg modela
 
-Od četiri trenirana modela najbolje se pokazao Random Forest. Ovaj model u proseku najmanje greši (prosečno greši u proceni cene automobila za 1054 dolara). I kada se gleda ponderisana greška, koja strže kažnjava velike promašaje, Random Forest model je najbolji. Koefiicijent determinacije ovog modela takođe najbolje objašnjava varijacije ciljne promenljive. 
+Od četiri trenirana modela najbolje se pokazao Random Forest (pogledati tabelu ispod). Ovaj model u proseku najmanje greši (prosečno greši u proceni cene automobila za 1054 dolara). I kada se gleda ponderisana greška, koja strže kažnjava velike promašaje, Random Forest model je najbolji. Koefiicijent determinacije ovog modela takođe najbolje objašnjava varijacije ciljne promenljive. 
 
  model          mae           mse         rmse        r2
 2      Random Forest  1054.495236  6.833551e+06  2614.106157  0.895777
