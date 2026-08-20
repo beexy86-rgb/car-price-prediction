@@ -75,3 +75,10 @@ results_df = results_df.sort_values(
 )
 print(results_df)
 
+# ZAKLJUČAK
+# Od četiri trenirana modela najbolje se pokazao Random Forest. 
+# Ovaj model u proseku najmanje greši (prosečno greši u proceni cene automobila za 1054 dolara). 
+# I kada se gleda ponderisana greška, koja strže kažnjava velike promašaje, Random Forest model je najbolji. 
+# Koefiicijent determinacije ovog modela takođe najbolje objašnjava varijacije ciljne promenljive.
+# Linearna regresila je po svim metrikama evaluacije najlošiji model.
+
